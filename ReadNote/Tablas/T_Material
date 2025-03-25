@@ -1,0 +1,35 @@
+using System;
+using SQLite;
+
+namespace ReadNote.Tablas
+{
+    public class T_Material // Cambiado a public para mayor accesibilidad
+    {
+        [PrimaryKey, AutoIncrement]
+        public int id_Material { get; set; } // Identificador único
+
+        [MaxLength(255)]
+        public string tipo_material { get; set; } // Tipo de material (Libro, Revista, etc.)
+
+        [MaxLength(255)]
+        public string nombre_material { get; set; } // Nombre del material
+
+        [MaxLength(255)]
+        public string autor_material { get; set; } // Autor del material
+
+        [MaxLength(255)]
+        public string descripcion_material { get; set; } // Descripción del material
+
+        [MaxLength(255)]
+        public string categoria_material { get; set; } // Categoría del material
+
+        public int nopag_material { get; set; } // Número de páginas (sin MaxLength porque es un entero)
+
+        public bool estado_material { get; set; } // Estado booleano (verdadero/falso)
+
+        [MaxLength(255)]
+        public string nivel_lector { get; set; } // Nivel del lector (Principiante, Intermedio, Avanzado)
+
+        public DateTime fecha_creacion { get; set; } // Fecha de creación del registro
+    }
+}
