@@ -3,10 +3,101 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ReadNote.Vistas.Material.Futuro.ActualizarMatFutVista">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowDefinitions="Auto, Auto, *, Auto" Padding="10">
+
+            <!-- Barra Superior -->
+            <Frame Padding="5" BackgroundColor="#D9D9D9" CornerRadius="30" BorderColor="Transparent">
+                <Grid BackgroundColor="LightGray" HeightRequest="50">
+                    <Image Source="volver.png" WidthRequest="{DynamicResource IconSize}" HeightRequest="{DynamicResource IconSize}"
+               VerticalOptions="Center" HorizontalOptions="Start" Margin="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnVolverTapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Frame>
+
+            <!-- Titulo -->
+            <Label Grid.Row="1" Text="Registrar Material" FontSize="30" FontAttributes="Bold" TextColor="White"
+               HorizontalOptions="Center" FontFamily="Lemon"/>
+
+            <!-- Contenido -->
+            
+            <Frame Grid.Row="2" BackgroundColor="#D9D9D9" CornerRadius="40" Margin="0,0,0,0">
+                <ScrollView>
+                    <StackLayout Padding="20">
+                    <Label Text="Tipo de Material:" FontSize="18" FontAttributes="Bold" FontFamily="Formularios" TextColor="Black"/>
+                    <Frame BackgroundColor="#A1A1A1" CornerRadius="40" Padding="0">
+                        <controls:CustomEntry BackgroundColor="Transparent" FontFamily="Formularios" IsEnabled="False" TextColor="Black"/>
+                    </Frame>
+
+                    <Label Text="Nombre de Material:" FontSize="18" FontAttributes="Bold" FontFamily="Formularios" TextColor="Black"/>
+                    <Frame BackgroundColor="#A1A1A1" CornerRadius="40" Padding="0">
+                        <controls:CustomEntry BackgroundColor="Transparent" FontFamily="Formularios" FontSize="22" 
+                                          HorizontalTextAlignment="Start" TextColor="Black"/>
+                    </Frame>
+
+                    <Label Text="Autor:" FontSize="18" FontAttributes="Bold" FontFamily="Formularios" TextColor="Black"/>
+                    <Frame BackgroundColor="#A1A1A1" CornerRadius="40" Padding="0">
+                        <controls:CustomEntry BackgroundColor="Transparent" FontFamily="Formularios" FontSize="22" 
+                                        HorizontalTextAlignment="Start" TextColor="Black"/>
+                    </Frame>
+
+                    <Label Text="Descripcion:" FontSize="18" FontAttributes="Bold" FontFamily="Formularios" TextColor="Black"/>
+                    <Frame BackgroundColor="#A1A1A1" CornerRadius="20" Padding="0">
+                        <controls:CustomEditor BackgroundColor="Transparent" HeightRequest="70" FontFamily="Formularios"
+                                        FontSize="22" TextColor="Black"/>
+                    </Frame>
+
+                    <Label Text="Categoria:" FontSize="18" FontAttributes="Bold" FontFamily="Formularios" TextColor="Black"/>
+                    <Frame BackgroundColor="#A1A1A1" CornerRadius="40" Padding="0">
+                        <controls:CustomEntry BackgroundColor="Transparent" FontFamily="Formularios" FontSize="22" 
+                                        HorizontalTextAlignment="Start" TextColor="Black"/>
+                    </Frame>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="Número de paginas:" FontSize="18" FontAttributes="Bold" FontFamily="Formularios" TextColor="Black"/>
+                            <Frame BackgroundColor="#A1A1A1" CornerRadius="40" Padding="0">
+                                <controls:CustomEntry BackgroundColor="Transparent" WidthRequest="100" Keyboard="Numeric" 
+                                  FontFamily="Formularios" FontSize="22" 
+                                  HorizontalTextAlignment="Center" TextColor="Black"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="EndAndExpand">
+                            <Label Text="Estado del material:" FontSize="18" FontAttributes="Bold" FontFamily="Formularios" TextColor="Black"/>
+                            <Frame BackgroundColor="#A1A1A1" CornerRadius="40" Padding="0">
+                                <controls:CustomEntry BackgroundColor="Transparent" FontFamily="Formularios" FontSize="22" IsEnabled="False" 
+                                            HorizontalTextAlignment="Start" TextColor="Black"/>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+
+
+                    <Button Text="Registrar" BackgroundColor="#A1A1A1" CornerRadius="40" Margin="80,20,80,0" TextColor="Black"
+                        FontFamily="Formularios" FontAttributes="Bold" FontSize="20"/>
+                </StackLayout>
+            </ScrollView>
+            </Frame>
+            
+
+            <!-- Barra Inferior -->
+            <Frame Grid.Row="3" Padding="15" BackgroundColor="#D9D9D9" CornerRadius="40" BorderColor="Transparent">
+                <Grid BackgroundColor="#D9D9D9" HeightRequest="50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="notificacion.png" WidthRequest="50" HeightRequest="50" Grid.Column="0"
+               VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Image Source="mas.png" WidthRequest="50" HeightRequest="50" Grid.Column="1"
+               VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Image Source="nuevacuenta.png" WidthRequest="50" HeightRequest="50" Grid.Column="2"
+               VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Grid>
+            </Frame>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
